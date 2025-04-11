@@ -1,8 +1,8 @@
 /* Variáveis de cor */
 :root {
     --primaria: rgb(216, 148, 159);
-    --secundaria: pink;
-    --clara: #E9ECEF;
+    --secundaria:#995d6c;
+    --clara: #ffdfdf;
     --escura: #995d6c;
     --branco: #FFFFFF;
     --destaque: #ffffff;
@@ -21,28 +21,38 @@ body {
     color: var(--escura);
     line-height: 1.6;
 }
-
-/* Barra de navegação */
 .barra-navegacao {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Alterado de space-between para center */
     align-items: center;
     padding: 1rem 2rem;
     background-color: var(--branco);
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: relative; /* Adicionado para posicionar elementos absolutos */
 }
 
-.logo {
+/* Logo posicionado à esquerda */
+.barra-navegacao .logo {
+    position: absolute;
+    left: 2rem;
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--primaria);
 }
 
+/* Navegação centralizada */
 .barra-navegacao nav {
     display: flex;
     gap: 1.5rem;
 }
 
+/* Botão posicionado à direita */
+.barra-navegacao .botao-nova-viagem {
+    position: absolute;
+    right: 2rem;
+}
+
+/* Mantém todos os outros estilos exatamente como estão */
 .barra-navegacao a {
     display: flex;
     align-items: center;
@@ -167,32 +177,191 @@ body {
 .imagem-viagem {
     width: 100%;
     height: 180px;
-    object-fit: cover;
 }
 
-.info-viagem {
-    padding: 1rem;
+.container-viagens {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.info-viagem h3 {
-    margin-bottom: 0.5rem;
+/* Barra de pesquisa centralizada */
+.barra-pesquisa {
+    background-color: var(--branco);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+}
+
+.titulo-secao {
     color: var(--primaria);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-.info-viagem .data {
-    color: var(--secundaria);
+/* Campo de busca centralizado com borda rosa */
+.campo-busca {
+    border: 2px solid #c57695;
+    border-radius: 8px;
+    padding: 0.8rem 1.2rem;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 1.5rem;
+    font-size: 1rem;
+    display: block;
+    transition: all 0.3s;
+}
+
+.campo-busca:focus {
+    outline: none;
+    border-color: #e91e63;
+    box-shadow: 0 0 0 3px rgba(233, 30, 99, 0.2);
+}
+
+/* Filtros centralizados */
+.filtros-viagens {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.filtro {
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    background-color: var(--branco);
+    border: 1px solid var(--cinza-medio);
+    cursor: pointer;
+    transition: all 0.3s;
     font-size: 0.9rem;
 }
 
+.filtro.ativo {
+    background-color: var(--primaria);
+    color: var(--branco);
+    border-color: var(--primaria);
+}
+
+/* Grade de viagens centralizada */
+.grade-viagens {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    justify-items: center;
+}
+
+.cartao-viagem {
+    background-color: var(--branco);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+    width: 100%;
+    max-width: 320px;
+}
+
+.cartao-viagem:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.cabecalho-cartao {
+    padding: 1.2rem;
+    background-color: var(--primaria);
+    color: var(--branco);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.corpo-cartao {
+    padding: 1.5rem;
+}
+
+.info-viagem {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.acoes-viagem {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+}
+/* Ícones Material */
+.material-icons {
+    font-size: 1.2em;
+    vertical-align: middle;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-conteudo {
+    background-color: var(--branco);
+    margin: 10% auto;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.fechar-modal {
+    float: right;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+/* Mantenha todo o resto do CSS que já temos */
+
 /* Responsividade */
 @media (max-width: 768px) {
-    .barra-navegacao {
-        flex-direction: column;
-        gap: 1rem;
-        padding: 1rem;
+    .container-viagens {
+        padding: 1.5rem;
     }
     
-    .conteiner-cartoes-viagem {
+    .barra-pesquisa {
+        padding: 1.5rem;
+    }
+    
+    .grade-viagens {
         grid-template-columns: 1fr;
+    }
+    
+    .filtros-viagens {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .filtro {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
     }
 }

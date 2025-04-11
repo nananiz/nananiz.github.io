@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas Viagens - MyTravel</title>
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/home.css">
+</head>
+<body>
+    <!-- Barra de navegação -->
+    <header class="barra-navegacao">
+        <div class="logo">MyTravel</div>
+        <nav>
+            <a href="index.html">
+                <i class="material-icons">home</i>
+                Início
+            </a>
+            <a href="viagens.html" class="ativo">
+                <i class="material-icons">flight</i>
+                Viagens
+            </a>
+            <a href="cronograma.html">
+                <i class="material-icons">calendar_today</i>
+                Cronograma
+            </a>
+            <a href="despesas.html">
+                <span class="material-symbols-outlined">payments</span>
+                Despesas
+            </a>
+        </nav>
+        <button class="botao-nova-viagem">
+            <i class="material-icons">add</i>
+            Nova Viagem
+        </button>
+    </header>
+
+    <main class="container-viagens">
+        <!-- Barra de pesquisa -->
+        <section class="barra-pesquisa">
+            <h2 class="titulo-secao">
+                <i class="material-icons">search</i>
+                Pesquisar Viagens
+            </h2>
+            
+            <input type="text" class="campo-busca" placeholder="Digite o destino, cidade ou país...">
+            
+            <div class="filtros-viagens">
+                <div class="filtro ativo">Todas</div>
+                <div class="filtro">Passadas</div>
+                <div class="filtro">Planejadas</div>
+                <div class="filtro">Futuras</div>
+            </div>
+        </section>
+
+        <!-- Grade de viagens -->
+        <div class="grade-viagens" id="grade-viagens">
+            <!-- Cartões serão gerados pelo JavaScript -->
+        </div>
+    </main>
+
+    <!-- Modal para edição -->
+    <div class="modal" id="modal-edicao">
+        <div class="modal-conteudo">
+            <span class="fechar-modal">&times;</span>
+            <h2>Editar Viagem</h2>
+            <form id="form-editar-viagem">
+                <!-- Campos do formulário -->
+            </form>
+        </div>
+    </div>
+
+    <script src="js/viagens.js"></script>
+</body>
+</html>
