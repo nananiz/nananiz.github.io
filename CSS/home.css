@@ -1,0 +1,198 @@
+/* Variáveis de cor */
+:root {
+    --primaria: rgb(216, 148, 159);
+    --secundaria: pink;
+    --clara: #E9ECEF;
+    --escura: #995d6c;
+    --branco: #FFFFFF;
+    --destaque: #ffffff;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--clara);
+    color: var(--escura);
+    line-height: 1.6;
+}
+
+/* Barra de navegação */
+.barra-navegacao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--branco);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primaria);
+}
+
+.barra-navegacao nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.barra-navegacao a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: var(--escura);
+}
+
+.barra-navegacao a.ativo {
+    background-color: var(--clara);
+    color: var(--primaria);
+}
+
+.barra-navegacao a:hover {
+    background-color: var(--clara);
+}
+
+.botao-nova-viagem {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--primaria);
+    color: var(--branco);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.botao-nova-viagem:hover {
+    background-color: var(--destaque);
+}
+
+/* Painel principal */
+.painel-principal {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.secao-boas-vindas {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.secao-boas-vindas h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primaria);
+}
+
+.resumo-viagens {
+    background-color: var(--branco);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+    text-align: center;
+    border-left: 4px solid var(--primaria);
+}
+
+.resumo-viagens p {
+    font-size: 1.1rem;
+    color: var(--escura);
+    margin-bottom: 0.5rem;
+}
+
+.destaque {
+    font-weight: 600;
+    color: var(--primaria);
+}
+
+/* Estatísticas rápidas */
+.estatisticas-rapidas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.cartao-estatistica {
+    background-color: var(--branco);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.cartao-estatistica .material-symbols-outlined {
+    font-size: 2.5rem;
+    color: var(--primaria);
+}
+
+/* Viagens recentes */
+.viagens-recentes h2 {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.conteiner-cartoes-viagem {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+/* Cartão de viagem */
+.cartao-viagem {
+    background-color: var(--branco);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.imagem-viagem {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.info-viagem {
+    padding: 1rem;
+}
+
+.info-viagem h3 {
+    margin-bottom: 0.5rem;
+    color: var(--primaria);
+}
+
+.info-viagem .data {
+    color: var(--secundaria);
+    font-size: 0.9rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .barra-navegacao {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    
+    .conteiner-cartoes-viagem {
+        grid-template-columns: 1fr;
+    }
+}

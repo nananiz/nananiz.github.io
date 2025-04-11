@@ -1,11 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>MyTravel - Organizador de Viagens</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="CSS/home.css">
 </head>
 <body>
-    olá
+    <header class="barra-navegacao">
+        <div class="logo">MyTravel</div>
+        <nav>
+            <a href="#" class="ativo">
+                <span class="material-symbols-outlined">home</span>
+                Início
+            </a>
+            <a href="#">
+                <span class="material-symbols-outlined">flight</span>
+                Viagens
+            </a>
+            <a href="#">
+                <span class="material-symbols-outlined">calendar_month</span>
+                Cronograma
+            </a>
+            <a href="#">
+                <span class="material-symbols-outlined">payments</span>
+                Despesas
+            </a>
+        </nav>
+        <button class="botao-nova-viagem">
+            <span class="material-symbols-outlined">add</span>
+            Nova Viagem
+        </button>
+    </header>
+
+    <main class="painel-principal">
+        <section class="secao-boas-vindas">
+            <h1>Bem-vindo(a) ao MyTravel!</h1>
+            <p>Organize suas viagens passadas e futuras em um só lugar</p>
+            <div id="resumo-viagens" class="resumo-viagens"></div>
+        </section>
+
+        <section class="estatisticas-rapidas">
+            <div class="cartao-estatistica">
+                <span class="material-symbols-outlined">flight_takeoff</span>
+                <h3>Próximas Viagens</h3>
+                <p id="contagem-proximas">2 planejadas</p>
+            </div>
+            <div class="cartao-estatistica">
+                <span class="material-symbols-outlined">flight_land</span>
+                <h3>Viagens Passadas</h3>
+                <p id="contagem-passadas">5 concluídas</p>
+            </div>
+        </section>
+
+        <section class="viagens-recentes">
+            <h2>
+                <span class="material-symbols-outlined">history</span>
+                Viagens Recentes
+            </h2>
+            <div class="conteiner-cartoes-viagem" id="lista-viagens">
+                <!-- Viagens serão inseridas aqui pelo JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
